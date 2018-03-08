@@ -8,6 +8,8 @@ import android.widget.Button;
 
 public class StartPageActivity extends AppCompatActivity {
 
+    //Buttons
+
     private Button SignUpButton;
     private Button SignInButton;
 

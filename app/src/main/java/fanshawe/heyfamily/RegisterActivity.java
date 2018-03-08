@@ -21,6 +21,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class RegisterActivity extends AppCompatActivity {
 
+    //vars
+
     private ProgressDialog loadingBar;
     private EditText RegisterUserName;
     private EditText RegisterUserEmail;
