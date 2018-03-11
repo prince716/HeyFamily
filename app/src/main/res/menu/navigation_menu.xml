@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_info"
+        android:title="Profile"></item>
+
+    <item
+        android:id="@+id/nav_redeem"
+        android:title="Find Friends"></item>
+
+    <item
+        android:id="@+id/nav_history"
+        android:title="Notifications"></item>
+
+    <item
+        android:id="@+id/nav_feedback"
+        android:title="Feedback"></item>
+
+    <item
+        android:id="@+id/nav_problem"
+        android:title="Report a problem?"></item>
+
+    <item
+        android:id="@+id/nav_logout"
+        android:title="Logout"></item>
+
+</menu>
