@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        //Tabs for main activity
+        //Tabs for main activity.
         myViewPager = findViewById(R.id.main_tabs_pager);
         myTabsPagerAdapter = new TabsPagerAdapter(getSupportFragmentManager());
         myViewPager.setAdapter(myTabsPagerAdapter);
