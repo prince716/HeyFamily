@@ -17,6 +17,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
 
+    //member Variables
     private FirebaseAuth mAuth;
     private DatabaseReference getUserDataReference;
     private Toolbar mToolbar;
