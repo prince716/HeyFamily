@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
+    tools:context="fanshawe.heyfamily.StatusActivity">
+
+    <include
+        android:id="@+id/status_app_bar"
+        layout="@layout/app_bar_layout"></include>
+
+    <EditText
+        android:id="@+id/status_input"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/save_status_change_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="68dp"
+        android:backgroundTint="@android:color/background_light"
+        android:ems="10"
+        android:hint="Update your status here!"
+        android:inputType="textMultiLine"
+        android:padding="15dp"
+        android:singleLine="true"
+        android:textColor="@android:color/background_light"
+        android:textColorHint="@android:color/background_light"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/save_status_change_button"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="215dp"
+        android:background="@drawable/button_border"
+        android:text="Save Changes"
+        android:textColor="@android:color/background_light"
+        android:textSize="15sp" />
+
+</RelativeLayout>

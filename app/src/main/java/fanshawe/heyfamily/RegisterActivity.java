@@ -2,13 +2,12 @@ package fanshawe.heyfamily;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
-import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -40,12 +39,12 @@ public class RegisterActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        RegisterUserName = (EditText) findViewById(R.id.register_name);
-        RegisterUserEmail = (EditText) findViewById(R.id.register_email);
-        RegisterUserPassword = (EditText) findViewById(R.id.register_password);
-        RegisterUserBirthDate = (EditText) findViewById(R.id.register_birthdate);
-        RegisterUserPhone = (EditText) findViewById(R.id.register_phone);
-        CreateAccountButton = (Button) findViewById(R.id.create_account_btn);
+        RegisterUserName = findViewById(R.id.register_name);
+        RegisterUserEmail = findViewById(R.id.register_email);
+        RegisterUserPassword = findViewById(R.id.register_password);
+        RegisterUserBirthDate = findViewById(R.id.register_birthdate);
+        RegisterUserPhone = findViewById(R.id.register_phone);
+        CreateAccountButton = findViewById(R.id.create_account_btn);
         loadingBar = new ProgressDialog(this);
 
         CreateAccountButton.setOnClickListener(new View.OnClickListener() {
@@ -106,6 +105,9 @@ public class RegisterActivity extends AppCompatActivity {
                                 storeUserDefaultDataReference.child("user_name").setValue(name);
                                 storeUserDefaultDataReference.child("user_email").setValue(email);
                                 storeUserDefaultDataReference.child("user_birthdate").setValue(birthdate);
+                                storeUserDefaultDataReference.child("user_status").setValue("Hey there, i am using HeyFamily!");
+                                storeUserDefaultDataReference.child("user_image").setValue("default_profile");
+                                storeUserDefaultDataReference.child("user_thumb_image").setValue("default_profile");
                                 storeUserDefaultDataReference.child("user_phone").setValue(phone)
                                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
