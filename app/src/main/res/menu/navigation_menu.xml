@@ -1,28 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+
     <item
-        android:id="@+id/nav_info"
+        android:id="@+id/nav_home"
+        android:icon="@drawable/home"
+        android:title="Home"></item>
+
+    <item
+        android:id="@+id/nav_profile"
+        android:icon="@drawable/profile1"
         android:title="Profile"></item>
 
     <item
-        android:id="@+id/nav_redeem"
+        android:id="@+id/nav_findfrnds"
+        android:icon="@drawable/findfrnds"
         android:title="Find Friends"></item>
 
     <item
-        android:id="@+id/nav_history"
+        android:id="@+id/nav_notification"
+        android:icon="@drawable/info"
         android:title="Notifications"></item>
 
     <item
         android:id="@+id/nav_feedback"
+        android:icon="@drawable/feedback"
         android:title="Feedback"></item>
 
     <item
         android:id="@+id/nav_problem"
+        android:icon="@drawable/problem"
         android:title="Report a problem?"></item>
 
     <item
         android:id="@+id/nav_logout"
+        android:icon="@drawable/logout"
         android:title="Logout"></item>
 
 </menu>
