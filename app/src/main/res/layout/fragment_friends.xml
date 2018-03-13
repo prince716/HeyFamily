@@ -1,14 +1,52 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="fanshawe.heyfamily.FriendsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Friend Fragment" />
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true">
 
-</FrameLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                        <android.support.design.widget.AppBarLayout
+                            android:id="@+id/appBarLayout"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                                <include
+                                    android:id="@+id/all_users_app_bar"
+                                    layout="@layout/app_bar_layout">
+
+                                </include>
+
+                                <android.support.design.widget.TabLayout
+                                    android:id="@+id/frnds_tabs"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+                                </android.support.design.widget.TabLayout>
+
+                        </android.support.design.widget.AppBarLayout>
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/all_users_list"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/appBarLayout">
+
+                        </android.support.v7.widget.RecyclerView>
+                </RelativeLayout>
+
+
+        </FrameLayout>
+
+
+</RelativeLayout>

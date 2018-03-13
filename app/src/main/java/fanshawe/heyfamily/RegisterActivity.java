@@ -99,6 +99,8 @@ public class RegisterActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful())
                             {
+                                String defaultPic = "https://firebasestorage.googleapis.com/v0/b/heyfamily-a8c45.appspot.com/o/Profile_Images%2Fdefault_profile.jpg?alt=media&token=6a219cb0-1c80-4eab-98a4-f3f9909aff2c";
+
                                 String current_user_id = mAuth.getCurrentUser().getUid();
                                 storeUserDefaultDataReference = FirebaseDatabase.getInstance().getReference().child("Users").child(current_user_id);
 
@@ -106,8 +108,8 @@ public class RegisterActivity extends AppCompatActivity {
                                 storeUserDefaultDataReference.child("user_email").setValue(email);
                                 storeUserDefaultDataReference.child("user_birthdate").setValue(birthdate);
                                 storeUserDefaultDataReference.child("user_status").setValue("Hey there, i am using HeyFamily!");
-                                storeUserDefaultDataReference.child("user_image").setValue("default_profile");
-                                storeUserDefaultDataReference.child("user_thumb_image").setValue("default_profile");
+                                storeUserDefaultDataReference.child("user_image").setValue(defaultPic);
+                                storeUserDefaultDataReference.child("user_thumb_image").setValue(defaultPic);
                                 storeUserDefaultDataReference.child("user_phone").setValue(phone)
                                         .addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override

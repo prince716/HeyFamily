@@ -24,7 +24,7 @@
         <activity android:name=".StartPageActivity" />
         <activity android:name=".ForgotPasswordActivity" />
         <activity android:name=".ProfileActivity" />
-        <activity android:name=".StatusActivity"></activity>
+        <activity android:name=".StatusActivity" />
     </application>
 
 </manifest>
