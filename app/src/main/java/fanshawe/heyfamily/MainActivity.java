@@ -17,7 +17,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -103,33 +102,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
-
-        if (savedInstanceState == null) {
-
-            FirebaseUser currUser = mAuth.getCurrentUser();
-
-            if (currUser != null)
-            {
-                String online_user_id = mAuth.getCurrentUser().getUid();
-                getUserDataReference = FirebaseDatabase.getInstance().getReference().child("Users").child(online_user_id);
-
-                getUserDataReference.addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(DataSnapshot dataSnapshot)
-                    {
-
-                    }
-                    @Override
-                    public void onCancelled(DatabaseError databaseError)
-                    {
-
-                    }
-                });
-            }
-
-        }
-
     }
 
     private void UserMenuSelector(MenuItem item) {
@@ -175,28 +147,12 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState)
-    {
 
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle outState)
-    {
-        super.onSaveInstanceState(outState);
-    }
 
     @Override
     protected void onStart()
     {
         super.onStart();
-
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-
-        if (currentUser == null) {
-            LogOutUser();
-        }
     }
 
     private void LogOutUser()
@@ -218,6 +174,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+        super.onOptionsItemSelected(item);
+
         if (item.getItemId() == R.id.profile_icon) {
             Intent settingsIntent = new Intent(MainActivity.this, ProfileActivity.class);
             startActivity(settingsIntent);
@@ -226,6 +184,6 @@ public class MainActivity extends AppCompatActivity {
         if (actionBarDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
-        return super.onOptionsItemSelected(item);
+        return true;
     }
 }

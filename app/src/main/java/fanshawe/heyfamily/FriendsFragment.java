@@ -29,7 +29,7 @@ public class FriendsFragment extends Fragment {
     private DatabaseReference allDatabaseUserRef;
     private View frndsView;
     public FriendsFragment() {
-        // Required empty public constructor
+
     }
 
     @Override
