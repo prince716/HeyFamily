@@ -2,6 +2,7 @@ package fanshawe.heyfamily;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -58,10 +59,20 @@ public class FriendsFragment extends Fragment {
                         allDatabaseUserRef
                 ) {
             @Override
-            protected void populateViewHolder(AllUsersViewHolder viewHolder, FriendsClass model, int position) {
+            protected void populateViewHolder(AllUsersViewHolder viewHolder, FriendsClass model, final int position) {
                 viewHolder.setUser_name(model.getUser_name());
                 viewHolder.setUser_status(model.getUser_status());
                 viewHolder.setUser_image(getContext().getApplicationContext(), model.getUser_image());
+
+                viewHolder.mView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        String visit_user_id = getRef(position).getKey();
+                        Intent profileIntent = new Intent(getActivity(), VisitProfileActivity.class);
+                        profileIntent.putExtra("visit_user_id", visit_user_id);
+                        startActivity(profileIntent);
+                    }
+                });
             }
         };
 

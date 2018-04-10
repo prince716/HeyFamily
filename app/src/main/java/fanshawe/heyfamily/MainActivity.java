@@ -122,6 +122,10 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Work in progress", Toast.LENGTH_LONG).show();
                 break;
 
+            case R.id.nav_frnds:
+                Intent frndsIntent = new Intent(MainActivity.this, UserFriendsActivity.class);
+                startActivity(frndsIntent);
+
             case R.id.nav_notification:
                 //Intent notificationIntent = new Intent(MainActivity.this, NotificationsFragment.class);
                 //startActivity(notificationIntent);

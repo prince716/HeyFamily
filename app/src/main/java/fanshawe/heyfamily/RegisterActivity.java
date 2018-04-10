@@ -17,6 +17,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 public class RegisterActivity extends AppCompatActivity {
 
@@ -98,6 +99,8 @@ public class RegisterActivity extends AppCompatActivity {
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful())
                             {
+                                String deviceToken = FirebaseInstanceId.getInstance().getToken();
+
                                 String defaultPic = "https://firebasestorage.googleapis.com/v0/b/heyfamily-a8c45.appspot.com/o/Profile_Images%2Fdefault_profile.jpg?alt=media&token=6a219cb0-1c80-4eab-98a4-f3f9909aff2c";
 
                                 String current_user_id = mAuth.getCurrentUser().getUid();
@@ -108,6 +111,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 storeUserDefaultDataReference.child("user_birthdate").setValue(birthdate);
                                 storeUserDefaultDataReference.child("user_status").setValue("Hey there, i am using HeyFamily!");
                                 storeUserDefaultDataReference.child("user_image").setValue(defaultPic);
+                                storeUserDefaultDataReference.child("device_token").setValue(deviceToken);
                                 storeUserDefaultDataReference.child("user_thumb_image").setValue(defaultPic);
                                 storeUserDefaultDataReference.child("user_phone").setValue(phone)
                                         .addOnCompleteListener(new OnCompleteListener<Void>() {
